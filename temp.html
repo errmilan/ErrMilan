@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ER</title>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: rgb(107, 106, 106);
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav{
+          text-decoration-color: rgb(136, 133, 133);
+          color:rgb(136, 133, 133);
+          padding: 10px;
+        }
+
+        nav ul li{
+            font-weight: 500;
+            display: inline-block;
+            margin-right: 40px;
+            text-transform: uppercase;
+            text-decoration-color: rgb(136, 133, 133);
+            color:rgb(136, 133, 133)
+        }
+
+        a {
+            text-decoration: none;
+            text-decoration-color: rgb(136, 133, 133);
+            color:rgb(136, 133, 133)
+            
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color:rgb(136, 133, 133)
+        }
+
+        a:visited{
+            text-decoration: none;
+            color:rgb(136, 133, 133)
+        }
+
+        #home {
+            height: 1000px;
+            text-align: center;
+            display: flex;
+            width: 100%;
+            font-weight: 100;
+            background-image: url("Background/remy_loz-3S0INpfREQc-unsplash.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #intro {
+            margin-top: 300px;
+            font-weight: 100;
+            margin-left: 400px;
+            margin-bottom: 450px;
+            padding: 30px;
+            color:rgb(255, 255, 255);
+            background-color: black;
+            opacity: 0.8;
+            border-radius: 10px;
+            
+
+        }
+
+        #Name {
+            font-size: 70px;
+            font-weight: 100;
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+            
+        }
+
+        #School, #Course {
+            margin: 0;
+            font-weight: 100;
+        }
+
+        #home img {
+            margin-left: 250px;
+            margin-top: 150px;
+            border-radius: 50%;
+            width: 500px;
+
+        }
+
+        #about {
+            height: 900px;
+            text-align: center;
+            display: inline-block;
+            width: 100%;
+            margin-top: -70px;
+        }
+
+        #about_paragraph {
+            background-color: rosybrown;
+            text-align: justify;
+            margin-top: 100px;
+            margin-left: 250px;
+            margin-right: 1200px;
+        }
+
+        #about h1 {
+            margin-top: 80px;
+        }
+
+        #skills {
+            height: 900px;
+            text-align: center;
+            display: inline-block;
+            width: 100%;
+            background-color: seagreen;
+        }
+
+        #projects {
+            height: 900px;
+            text-align: center;
+        }
+
+        #proj {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #thesis, #design {
+            background-color: sandybrown;
+            margin: auto;
+        }
+
+        #contact {
+            height: 400px;
+            text-align: center;
+            display: inline-block;
+            width: 100%;
+            background-color: seagreen;
+        }
+
+        .content {
+            padding: 16px;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .sticky + .content {
+            padding-top: 60px;
+        }
+
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .thesis-modal-content, .design-modal-content {
+            background-color: royalblue;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .thesis-close, .design-close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .thesis-close:hover,
+        .thesis-close:focus,
+        .design-close:hover,
+        .design-close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #thesis_btn, #design_btn {
+            display:inline-block;
+            padding:0.35em 1.2em;
+            border:0.1em solid #FFFFFF;
+            margin:0 0.3em 0.3em 0;
+            border-radius:0.12em;
+            box-sizing: border-box;
+            text-decoration:none;
+            font-family:'Roboto',sans-serif;
+            font-weight:300;
+            color:#000000;
+            text-align:center;
+            transition: all 0.2s;
+        }
+
+        #thesis_btn:hover, #design_btn:hover {
+            color: #000000;
+            background-color: #FFFFFF;
+        }
+
+        @media all and (max-width:30em){
+            #thesis_btn, #design_btn {
+            display: block;
+            margin: 0.4em auto
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    
+    
+    <section id="home">
+        <div class="bg_home"></div>
+
+        <div id="intro">
+            <h1 id="Name">Erwin Milan</h1>
+            <h2 id="Course">Computer Engineer</h2>
+            <h3 id="School">Mapua University</h3>
+        </div>
+        <div>
+            <img src="Er/er1.JPG">
+        </div>
+        
+        
+    </section>
+
+    <section id="about">
+        <h1>About Me</h1>
+        <div id="about_paragraph">
+            Hi, I'm an undergrad Computer Engineering student at Mapua University looking to build my career as a software developer. 
+            With technology as one of the main factors that runs our society, I also want to create applications that will be used by others.
+        </div>
+        
+    </section>
+
+    <section id="skills">
+        <h1>Skills</h1>
+        C++ UNIX
+        C# MySQL
+        HTML 
+        CSS 
+
+    </section>
+
+    <section id="projects">
+        <h1>Projects</h1>
+        <section id="proj">
+            <div id="thesis">
+                <h1>Automatic Regulation of pH and EC for NFT Hydroponics System</h1>
+                <button id="thesis_btn">Learn More</button>
+
+                <div id="thesis_modal" class="modal">
+                    <div class="thesis-modal-content">
+                        <span class="thesis-close">&times;</span>
+                        <p>Hydroponics is an artificial technique of cultivating plants in a liquid solution composing of essential 
+                            nutrients as a replacement to the use of soil. A hydroponic technique in which the dissolved nutrients 
+                            are continuously flowing over the roots of plants and recirculating in the nutrient tank is known as 
+                            the Nutrient Film Technique (NFT). This study aims to determine if having a consistent value within 
+                            the recommended range for the conductivity level and pH of the hydroponic solution in an NFT hydroponics 
+                            system will produce better growth for arugula. The researchers recorded the plant parameters for the 
+                            automatic and manual system every 3 days for 30 days. Comparing the data obtained, plants cultivated on 
+                            the automatically regulated system showed better plant growth. The plants showed a 39.5 mm higher plant 
+                            height, 2.5 more number of leaves, 13.625 mm wider leaves, and 25.92 mm longer leaves on the automatically 
+                            regulated system.</p>
+                        
+
+                    </div>
+
+                </div>
+            </div>
+            <div id="design">
+                <h1>A Braille Learning System for the Blind using ATmega328p</h1>
+                <button id="design_btn">Learn More</button>
+
+                <div id="design_modal" class="modal">
+                    <div class="design-modal-content">
+                        <span class="design-close">&times;</span>
+                        <p>ABSTRACT Design1</p>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section id="contact">
+        <h1>Contact</h1>
+        errmilan@gmail.com | 09156808008 | Pasay City
+    </section>
+    
+
+    <script>
+        window.onscroll = function() {myFunction()};
+        
+        var navbar = document.getElementById("nav");
+        var sticky = navbar.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+          } else {
+            navbar.classList.remove("sticky");
+          }
+        }
+    </script>
+
+    <script>
+        // Get the modal
+        var modal1 = document.getElementById("thesis_modal");
+        var modal2 = document.getElementById("design_modal");
+        
+        // Get the button that opens the modal
+        var btn1 = document.getElementById("thesis_btn");
+        var btn2 = document.getElementById("design_btn");
+        
+        // Get the <span> element that closes the modal
+        var span1 = document.getElementsByClassName("thesis-close")[0];
+        var span2 = document.getElementsByClassName("design-close")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn1.onclick = function() {
+        modal1.style.display = "block";
+        }
+        btn2.onclick = function() {
+        modal2.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span1.onclick = function() {
+        modal1.style.display = "none";
+        }
+        span2.onclick = function() {
+        modal2.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal1) {
+            modal1.style.display = "none";
+        }
+
+        if (event.target == modal2) {
+            modal2.style.display = "none";
+        }
+    }
+    </script>
+
+</body>
+</html>
