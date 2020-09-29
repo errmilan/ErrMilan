@@ -3,163 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ER</title>
+    <title>ErrMilan</title>
     <style>
-        html{
+        html {
             scroll-behavior: smooth;
         }
 
         body {
-            background: rgb(107, 106, 106);
-            color: white;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
             margin: 0;
             padding: 0;
         }
 
-        nav{
-          text-decoration-color: rgb(136, 133, 133);
-          color:rgb(136, 133, 133);
-          padding: 10px;
-        }
-
-        nav ul li{
-            font-weight: 500;
-            display: inline-block;
-            margin-right: 40px;
+        nav {
+            overflow: hidden;
+            position: fixed;
+            text-decoration: none;
             text-transform: uppercase;
-            text-decoration-color: rgb(136, 133, 133);
-            color:rgb(136, 133, 133)
+            padding: 20px;
+            width: 100%;
         }
 
-        a {
+        nav a {
+            text-align: center;
             text-decoration: none;
-            text-decoration-color: rgb(136, 133, 133);
-            color:rgb(136, 133, 133)
-            
+            color:rgb(204, 204, 204);
+            margin-left: 50px;
+
         }
 
-        a:hover {
+        nav a:hover {
             text-decoration: underline;
-            color:rgb(136, 133, 133)
+            color:rgb(204, 204, 204);
         }
 
-        a:visited{
+        nav a:visited {
             text-decoration: none;
-            color:rgb(136, 133, 133)
+            color:rgb(204, 204, 204);
         }
 
         #home {
             height: 1000px;
             text-align: center;
             display: flex;
-            width: 100%;
-            font-weight: 100;
-            background-image: url("Background/remy_loz-3S0INpfREQc-unsplash.jpg");
+            background-image: url("Background/a2.jpg");
             background-position: center;
-            background-repeat: no-repeat;
             background-size: cover;
         }
 
         #intro {
-            margin-top: 300px;
-            font-weight: 100;
-            margin-left: 400px;
-            margin-bottom: 450px;
-            padding: 30px;
-            color:rgb(255, 255, 255);
-            background-color: black;
-            opacity: 0.8;
-            border-radius: 10px;
-            
-
+            margin-top: 270px;
+            width: 100%;
         }
 
-        #Name {
-            font-size: 70px;
-            font-weight: 100;
+        #name, #school, #course {
             margin: 0;
             padding: 0;
-            text-transform: uppercase;
-            
+            font-weight: 100;
+            color:rgb(255, 255, 255);
         }
 
-        #School, #Course {
-            margin: 0;
-            font-weight: 100;
+        #name {
+            font-size: 70px;
+            text-transform: uppercase;
         }
 
         #home img {
-            margin-left: 250px;
-            margin-top: 150px;
-            border-radius: 50%;
             width: 500px;
-
+            border-radius: 50%;
+            margin-top: 150px;
+            margin-left: 250px;
         }
 
         #about {
-            height: 900px;
+            height: 650px;
+            background-color: rgb(25, 25, 25);
+            background-image: url("Background/5a.jpg");
+            background-position: bottom;
             text-align: center;
-            display: inline-block;
-            width: 100%;
-            margin-top: -70px;
-        }
-
-        #about_paragraph {
-            background-color: rosybrown;
-            text-align: justify;
-            margin-top: 100px;
-            margin-left: 250px;
-            margin-right: 1200px;
+            color:rgb(255, 255, 255);
         }
 
         #about h1 {
-            margin-top: 80px;
+            margin-top: 0;
+            padding-top: 20px;
+            font-size: 50px;
+            font-weight: 100;
+        }
+
+        #about_contents {
+            display: flex;
+        }
+
+        #about_paragraph {
+            width: 500px;
+            text-align: justify;
+            font-size: 20px;
+            margin-left: 300px;
+            text-indent: 50px;
+        }
+
+        #about img {
+            margin-left: 250px;
+            border-radius: 50%;
+            width: 400px;
         }
 
         #skills {
-            height: 900px;
+            height: 700px;
             text-align: center;
+            color: white;
+            font-size: 20px;
+            background-image: url("Background/c.jpg");
+            background-position: top;
+            background-size: 2100px;
+        }
+
+        #skills h1 {
+            margin-top: 0;
+            padding-top: 20px;
+            font-size: 50px;
+            font-weight: 100;
+        }
+
+        #skills_content {
             display: inline-block;
-            width: 100%;
-            background-color: seagreen;
+            background-color: rgb(34, 34, 34);
+            border-radius: 10px;
+            padding: 30px;
+            opacity: 0.9;
+        }
+
+        #skills_content img {
+            width: 100px;
+            padding: 20px;
+            margin: auto;
+            opacity: 1;
         }
 
         #projects {
-            height: 900px;
+            height: 600px;
+            background-color:rgb(25, 25, 25);
+            background-image: url("Background/6a1.jpg");
+            background-position: center;
             text-align: center;
+            color: white;
+            font-size: 20px;
         }
 
-        #proj {
+        #projects h1 {
+            margin-top: 0;
+            padding-top: 20px;
+            font-size: 50px;
+            font-weight: 100;
+        }
+
+        #project_contents {
             display: flex;
-            flex-direction: row;
+            margin: auto;
+            width: 1300px;
+        }
+        
+        #thesis, #design {
+            margin: auto;
+            width: 700px;
+            background-color: rgb(29, 29, 29);
+            border-radius: 10px;
         }
 
-        #thesis, #design {
-            background-color: sandybrown;
-            margin: auto;
+        #projects h2 {
+            font-weight: 100;
+            text-align: center;
+            margin: 10px;
         }
 
         #contact {
             height: 400px;
+            background-image: url("Background/b6.png");
+            background-position: bottom;
+            background-size: cover;
             text-align: center;
-            display: inline-block;
-            width: 100%;
-            background-color: seagreen;
+            color: white;
+            font-size: 30px;
         }
 
-        .content {
-            padding: 16px;
-        }
-
-        .sticky {
-            position: fixed;
-            top: 0;
-            width: 100%;
-        }
-
-        .sticky + .content {
-            padding-top: 60px;
+        #contact h1 {
+            margin-top: 0;
+            padding-top: 20px;
+            font-size: 50px;
+            font-weight: 100;
         }
 
         .modal {
@@ -178,11 +210,18 @@
 
         /* Modal Content */
         .thesis-modal-content, .design-modal-content {
-            background-color: royalblue;
+            background-color: rgb(65, 65, 65);
             margin: auto;
             padding: 20px;
             border: 1px solid #888;
             width: 80%;
+            text-align: justify;
+            font-weight: 100;
+        }
+
+        .thesis-modal-content h3, .design-modal-content h3 {
+            text-align: center;
+            font-weight: 100;
         }
 
         /* The Close Button */
@@ -228,64 +267,131 @@
             margin: 0.4em auto
             }
         }
+
+        .thesis_flip, .design_flip {
+            background-color: transparent;
+            width: 500px;
+            height: 400px;
+            perspective: 1000px;
+            margin: auto;
+            
+        }
+
+        .thesis_flip_inner, .design_flip_inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .thesis_flip:hover .thesis_flip_inner, .design_flip:hover .design_flip_inner {
+            transform: rotateY(180deg);
+        }
+
+        .thesis_flip_front, .thesis_flip_back, .design_flip_front, .design_flip_back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .thesis_flip_front, .design_flip_front {
+            background-color: rgb(26, 26, 26);
+            color: rgb(253, 253, 253);
+            border-radius: 6px;
+        }
+
+        .thesis_flip_front img {
+            width: 350px;
+        }
+
+        .design_flip_front img {
+            width: 350px;
+        }
+
+        .thesis_flip_back, .design_flip_back {
+            background-color: rgb(119, 119, 119);
+            color: white;
+            transform: rotateY(180deg);
+            font-size: 15px;
+            
+            text-align: justify;
+            text-indent: 20px;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        
     </style>
 </head>
 <body>
     <nav id="nav">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
     </nav>
-    
-    
-    
-    <section id="home">
-        <div class="bg_home"></div>
 
+    <section id="home">
         <div id="intro">
-            <h1 id="Name">Erwin Milan</h1>
-            <h2 id="Course">Computer Engineer</h2>
-            <h3 id="School">Mapua University</h3>
+            <h1 id="name">Erwin Milan</h1>
+            <h2 id="course">Computer Engineer</h2>
+            <h3 id="school">Mapua University</h3>
         </div>
-        <div>
-            <img src="Er/er1.JPG">
-        </div>
-        
-        
     </section>
 
     <section id="about">
         <h1>About Me</h1>
-        <div id="about_paragraph">
-            Hi, I'm an undergrad Computer Engineering student at Mapua University looking to build my career as a software developer. 
-            With technology as one of the main factors that runs our society, I also want to create applications that will be used by others.
+        <div id="about_contents">
+            <div id="about_paragraph">
+                Hello, I'm an undergrad Computer Engineering student at Mapua University looking to build my career as a software developer. 
+                With technology as one of the main factors that runs our society, I also want to create applications that will be used by others.
+            </div>
+            <div>
+                <img src="Er/er1.JPG">
+            </div>
         </div>
         
     </section>
 
     <section id="skills">
         <h1>Skills</h1>
-        C++ UNIX
-        C# MySQL
-        HTML 
-        CSS 
-
+        <div id="skills_content">
+            <div id="r1">
+                <img src="skills/html.png">
+                <img src="skills/css.png">
+                <img src="skills/javascript.png">
+                <img src="skills/mysql.png">
+            </div>
+            <div id="r2">
+                <img src="skills/cplus.png">
+                <img src="skills/csharp.png">
+                <img src="skills/photoshop.png">
+                <img src="skills/premiere.png">
+            </div>
+            <div id="r3">
+                <img src="skills/python.png">
+                <img src="skills/linux.png">
+                <img src="skills/arduino.png">
+                <img src="skills/cisco.png">
+            </div>
+        </div>
     </section>
 
     <section id="projects">
         <h1>Projects</h1>
-        <section id="proj">
-            <div id="thesis">
-                <h1>Automatic Regulation of pH and EC for NFT Hydroponics System</h1>
-                <button id="thesis_btn">Learn More</button>
+        <section id="project_contents">
 
-                <div id="thesis_modal" class="modal">
-                    <div class="thesis-modal-content">
-                        <span class="thesis-close">&times;</span>
+            <div class="thesis_flip">
+                <div class="thesis_flip_inner">
+                    <div class="thesis_flip_front">
+                        <h2>Automatic Regulation of pH and EC for NFT Hydroponics System</h2>
+                        <img src="projects/plant.jpg">
+                    </div>
+                    <div class="thesis_flip_back">
                         <p>Hydroponics is an artificial technique of cultivating plants in a liquid solution composing of essential 
                             nutrients as a replacement to the use of soil. A hydroponic technique in which the dissolved nutrients 
                             are continuously flowing over the roots of plants and recirculating in the nutrient tank is known as 
@@ -296,48 +402,41 @@
                             the automatically regulated system showed better plant growth. The plants showed a 39.5 mm higher plant 
                             height, 2.5 more number of leaves, 13.625 mm wider leaves, and 25.92 mm longer leaves on the automatically 
                             regulated system.</p>
-                        
-
                     </div>
-
                 </div>
             </div>
-            <div id="design">
-                <h1>A Braille Learning System for the Blind using ATmega328p</h1>
-                <button id="design_btn">Learn More</button>
 
-                <div id="design_modal" class="modal">
-                    <div class="design-modal-content">
-                        <span class="design-close">&times;</span>
-                        <p>ABSTRACT Design1</p>
-
+            <div class="design_flip">
+                <div class="design_flip_inner">
+                    <div class="design_flip_front">
+                        <h2>A Braille Learning System for the Blind using ATmega328p</h2>
+                        <img src="projects/design.png">
                     </div>
-
+                    <div class="design_flip_back">
+                        <p>This design project was developed to address the client's need for a device to assist the blind in their 
+                            foundation in learning the braille and monitor their progress. There are three modes in the device that
+                             will help the users learn and know their progress - Braille Pattern Recognition, Voice Input Braille 
+                             Recognition, and Guess the Braille Pattern. The device will operate using ATmega328P as the microcontroller. 
+                             It will also be using six pushbuttons and six push/pull solenoids to mimic the braille pattern that was 
+                             formed by the user. The device can be controlled using a mobile application and it will be connected to 
+                             the device via Wi-Fi. The mobile application will be used by the facilitator.  The mobile application 
+                             supports voice recognition which will accept input from the user, and it can also be used to test the 
+                             knowledge of the user about the Braille. Using the three modes of the device, its functionalities and 
+                             accuracy were tested. Based on the tests conducted and analysis of the results, it can be concluded that 
+                             the device can accurately form the corresponding braille pattern from the input of the user.</p>
+                    </div>
                 </div>
             </div>
+
+
         </section>
     </section>
 
     <section id="contact">
         <h1>Contact</h1>
-        errmilan@gmail.com | 09156808008 | Pasay City
+        <div>errmilan@gmail.com | 09156808008 | Pasay City</div>
     </section>
-    
 
-    <script>
-        window.onscroll = function() {myFunction()};
-        
-        var navbar = document.getElementById("nav");
-        var sticky = navbar.offsetTop;
-        
-        function myFunction() {
-          if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky")
-          } else {
-            navbar.classList.remove("sticky");
-          }
-        }
-    </script>
 
     <script>
         // Get the modal
@@ -379,6 +478,5 @@
         }
     }
     </script>
-
 </body>
 </html>

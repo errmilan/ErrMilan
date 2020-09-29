@@ -110,7 +110,7 @@
         }
 
         #skills {
-            height: 500px;
+            height: 700px;
             text-align: center;
             color: white;
             font-size: 20px;
@@ -128,11 +128,9 @@
 
         #skills_content {
             display: inline-block;
-            margin-left: 200px;
-            margin-right: 200px;
-            background-color: black;
+            background-color: rgb(34, 34, 34);
             border-radius: 10px;
-            padding: 20px;
+            padding: 30px;
             opacity: 0.9;
         }
 
@@ -143,13 +141,11 @@
             opacity: 1;
         }
 
-
-
         #projects {
             height: 600px;
             background-color:rgb(25, 25, 25);
             background-image: url("Background/6a1.jpg");
-            background-position: right;
+            background-position: center;
             text-align: center;
             color: white;
             font-size: 20px;
@@ -165,6 +161,7 @@
         #project_contents {
             display: flex;
             margin: auto;
+            width: 1300px;
         }
         
         #thesis, #design {
@@ -182,8 +179,8 @@
 
         #contact {
             height: 400px;
-            background-image: url("Background/b2.jpg");
-            background-position: center;
+            background-image: url("Background/b6.png");
+            background-position: bottom;
             background-size: cover;
             text-align: center;
             color: white;
@@ -270,6 +267,62 @@
             margin: 0.4em auto
             }
         }
+
+        .thesis_flip, .design_flip {
+            background-color: transparent;
+            width: 500px;
+            height: 400px;
+            perspective: 1000px;
+            margin: auto;
+            
+        }
+
+        .thesis_flip_inner, .design_flip_inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .thesis_flip:hover .thesis_flip_inner, .design_flip:hover .design_flip_inner {
+            transform: rotateY(180deg);
+        }
+
+        .thesis_flip_front, .thesis_flip_back, .design_flip_front, .design_flip_back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .thesis_flip_front, .design_flip_front {
+            background-color: rgb(26, 26, 26);
+            color: rgb(253, 253, 253);
+            border-radius: 6px;
+        }
+
+        .thesis_flip_front img {
+            width: 350px;
+        }
+
+        .design_flip_front img {
+            width: 350px;
+        }
+
+        .thesis_flip_back, .design_flip_back {
+            background-color: rgb(119, 119, 119);
+            color: white;
+            transform: rotateY(180deg);
+            font-size: 15px;
+            
+            text-align: justify;
+            text-indent: 20px;
+            padding: 10px;
+            border-radius: 6px;
+        }
         
     </style>
 </head>
@@ -308,18 +361,22 @@
         <h1>Skills</h1>
         <div id="skills_content">
             <div id="r1">
-                <img src="skills/arduino logo.png">
-                <img src="skills/cisco logo.png">
-                <img src="skills/cpluslogo.png">
-                <img src="skills/csharplogo.png">
-                <img src="skills/css3-logo.png">
+                <img src="skills/html.png">
+                <img src="skills/css.png">
+                <img src="skills/javascript.png">
+                <img src="skills/mysql.png">
             </div>
             <div id="r2">
-                <img src="skills/htmllogo.png">
-                <img src="skills/JavaScript-logo.png">
-                <img src="skills/linux logo.png">
-                <img src="skills/mysql logo.png">
-                <img src="skills/phyton logo.png">
+                <img src="skills/cplus.png">
+                <img src="skills/csharp.png">
+                <img src="skills/photoshop.png">
+                <img src="skills/premiere.png">
+            </div>
+            <div id="r3">
+                <img src="skills/python.png">
+                <img src="skills/linux.png">
+                <img src="skills/arduino.png">
+                <img src="skills/cisco.png">
             </div>
         </div>
     </section>
@@ -327,13 +384,14 @@
     <section id="projects">
         <h1>Projects</h1>
         <section id="project_contents">
-            <div id="thesis">
-                <h2>Automatic Regulation of pH and EC for NFT Hydroponics System</h2>
-                <button id="thesis_btn">Learn More</button>
-                <div id="thesis_modal" class="modal">
-                    <div class="thesis-modal-content">
-                        <span class="thesis-close">&times;</span>
-                        <h3>Abstract</h3>
+
+            <div class="thesis_flip">
+                <div class="thesis_flip_inner">
+                    <div class="thesis_flip_front">
+                        <h2>Automatic Regulation of pH and EC for NFT Hydroponics System</h2>
+                        <img src="projects/plant.jpg">
+                    </div>
+                    <div class="thesis_flip_back">
                         <p>Hydroponics is an artificial technique of cultivating plants in a liquid solution composing of essential 
                             nutrients as a replacement to the use of soil. A hydroponic technique in which the dissolved nutrients 
                             are continuously flowing over the roots of plants and recirculating in the nutrient tank is known as 
@@ -348,14 +406,13 @@
                 </div>
             </div>
 
-            <div id="design">
-                <h2>A Braille Learning System for the Blind using ATmega328p</h2>
-                <button id="design_btn">Learn More</button>
-
-                <div id="design_modal" class="modal">
-                    <div class="design-modal-content">
-                        <span class="design-close">&times;</span>
-                        <h3>Abstract</h3>
+            <div class="design_flip">
+                <div class="design_flip_inner">
+                    <div class="design_flip_front">
+                        <h2>A Braille Learning System for the Blind using ATmega328p</h2>
+                        <img src="projects/design.png">
+                    </div>
+                    <div class="design_flip_back">
                         <p>This design project was developed to address the client's need for a device to assist the blind in their 
                             foundation in learning the braille and monitor their progress. There are three modes in the device that
                              will help the users learn and know their progress - Braille Pattern Recognition, Voice Input Braille 
@@ -371,12 +428,13 @@
                 </div>
             </div>
 
+
         </section>
     </section>
 
     <section id="contact">
         <h1>Contact</h1>
-        errmilan@gmail.com | 09156808008 | Pasay City
+        <div>errmilan@gmail.com | 09156808008 | Pasay City</div>
     </section>
 
 

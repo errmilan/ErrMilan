@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ErrMilan</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            overflow: hidden;
+            position: fixed;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 20px;
+            width: 100%;
+        }
+
+        nav a {
+            text-align: center;
+            text-decoration: none;
+            color:rgb(204, 204, 204);
+            margin-left: 50px;
+
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color:rgb(204, 204, 204);
+        }
+
+        nav a:visited {
+            text-decoration: none;
+            color:rgb(204, 204, 204);
+        }
+
+        #home {
+            height: 1000px;
+            text-align: center;
+            display: flex;
+            background-image: url("Background/a2.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+
+        #intro {
+            margin-top: 270px;
+            width: 100%;
+        }
+
+        #name, #school, #course {
+            margin: 0;
+            padding: 0;
+            font-weight: 100;
+            color:rgb(255, 255, 255);
+        }
+
+        #name {
+            font-size: 70px;
+            text-transform: uppercase;
+        }
+
+        #home img {
+            width: 500px;
+            border-radius: 50%;
+            margin-top: 150px;
+            margin-left: 250px;
+        }
+
+        #about {
+            height: 650px;
+            background-color: rgb(25, 25, 25);
+            background-image: url("Background/5a.jpg");
+            background-position: bottom;
+            text-align: center;
+            color:rgb(255, 255, 255);
+        }
+
+        #about h1 {
+            margin-top: 0;
+            padding-top: 20px;
+            font-size: 50px;
+            font-weight: 100;
+        }
+
+        #about_contents {
+            display: flex;
+        }
+
+        #about_paragraph {
+            width: 500px;
+            text-align: justify;
+            font-size: 20px;
+            margin-left: 300px;
+            text-indent: 50px;
+        }
+
+        #about img {
+            margin-left: 250px;
+            border-radius: 50%;
+            width: 400px;
+        }
+
+        #skills {
+            height: 700px;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            background-image: url("Background/c.jpg");
+            background-position: top;
+            background-size: 2100px;
+        }
+
+        #skills h1 {
+            margin-top: 0;
+            padding-top: 20px;
+            font-size: 50px;
+            font-weight: 100;
+        }
+
+        #skills_content {
+            display: inline-block;
+            background-color: rgb(34, 34, 34);
+            border-radius: 10px;
+            padding: 30px;
+            opacity: 0.9;
+        }
+
+        #skills_content img {
+            width: 100px;
+            padding: 20px;
+            margin: auto;
+            opacity: 1;
+        }
+
+        #projects {
+            height: 600px;
+            background-color:rgb(25, 25, 25);
+            background-image: url("Background/6a1.jpg");
+            background-position: right;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        #projects h1 {
+            margin-top: 0;
+            padding-top: 20px;
+            font-size: 50px;
+            font-weight: 100;
+        }
+
+        #project_contents {
+            display: flex;
+            margin: auto;
+        }
+        
+        #thesis, #design {
+            margin: auto;
+            width: 700px;
+            background-color: rgb(29, 29, 29);
+            border-radius: 10px;
+        }
+
+        #projects h2 {
+            font-weight: 100;
+            text-align: center;
+            margin: 10px;
+        }
+
+        #contact {
+            height: 400px;
+            background-image: url("Background/b2.jpg");
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+            color: white;
+            font-size: 30px;
+        }
+
+        #contact h1 {
+            margin-top: 0;
+            padding-top: 20px;
+            font-size: 50px;
+            font-weight: 100;
+        }
+
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .thesis-modal-content, .design-modal-content {
+            background-color: rgb(65, 65, 65);
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            text-align: justify;
+            font-weight: 100;
+        }
+
+        .thesis-modal-content h3, .design-modal-content h3 {
+            text-align: center;
+            font-weight: 100;
+        }
+
+        /* The Close Button */
+        .thesis-close, .design-close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .thesis-close:hover,
+        .thesis-close:focus,
+        .design-close:hover,
+        .design-close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #thesis_btn, #design_btn {
+            display:inline-block;
+            padding:0.35em 1.2em;
+            border:0.1em solid #FFFFFF;
+            margin:0 0.3em 0.3em 0;
+            border-radius:0.12em;
+            box-sizing: border-box;
+            text-decoration:none;
+            font-family:'Roboto',sans-serif;
+            font-weight:300;
+            color:#000000;
+            text-align:center;
+            transition: all 0.2s;
+        }
+
+        #thesis_btn:hover, #design_btn:hover {
+            color: #000000;
+            background-color: #FFFFFF;
+        }
+
+        @media all and (max-width:30em){
+            #thesis_btn, #design_btn {
+            display: block;
+            margin: 0.4em auto
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home">
+        <div id="intro">
+            <h1 id="name">Erwin Milan</h1>
+            <h2 id="course">Computer Engineer</h2>
+            <h3 id="school">Mapua University</h3>
+        </div>
+    </section>
+
+    <section id="about">
+        <h1>About Me</h1>
+        <div id="about_contents">
+            <div id="about_paragraph">
+                Hello, I'm an undergrad Computer Engineering student at Mapua University looking to build my career as a software developer. 
+                With technology as one of the main factors that runs our society, I also want to create applications that will be used by others.
+            </div>
+            <div>
+                <img src="Er/er1.JPG">
+            </div>
+        </div>
+        
+    </section>
+
+    <section id="skills">
+        <h1>Skills</h1>
+        <div id="skills_content">
+            <div id="r1">
+                <img src="skills/html.png">
+                <img src="skills/css.png">
+                <img src="skills/javascript.png">
+                <img src="skills/mysql.png">
+            </div>
+            <div id="r2">
+                <img src="skills/cplus.png">
+                <img src="skills/csharp.png">
+                <img src="skills/photoshop.png">
+                <img src="skills/premiere.png">
+            </div>
+            <div id="r3">
+                <img src="skills/python.png">
+                <img src="skills/linux.png">
+                <img src="skills/arduino.png">
+                <img src="skills/cisco.png">
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h1>Projects</h1>
+        <section id="project_contents">
+            <div id="thesis">
+                <h2>Automatic Regulation of pH and EC for NFT Hydroponics System</h2>
+                <button id="thesis_btn">Learn More</button>
+                <div id="thesis_modal" class="modal">
+                    <div class="thesis-modal-content">
+                        <span class="thesis-close">&times;</span>
+                        <h3>Abstract</h3>
+                        <p>Hydroponics is an artificial technique of cultivating plants in a liquid solution composing of essential 
+                            nutrients as a replacement to the use of soil. A hydroponic technique in which the dissolved nutrients 
+                            are continuously flowing over the roots of plants and recirculating in the nutrient tank is known as 
+                            the Nutrient Film Technique (NFT). This study aims to determine if having a consistent value within 
+                            the recommended range for the conductivity level and pH of the hydroponic solution in an NFT hydroponics 
+                            system will produce better growth for arugula. The researchers recorded the plant parameters for the 
+                            automatic and manual system every 3 days for 30 days. Comparing the data obtained, plants cultivated on 
+                            the automatically regulated system showed better plant growth. The plants showed a 39.5 mm higher plant 
+                            height, 2.5 more number of leaves, 13.625 mm wider leaves, and 25.92 mm longer leaves on the automatically 
+                            regulated system.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="design">
+                <h2>A Braille Learning System for the Blind using ATmega328p</h2>
+                <button id="design_btn">Learn More</button>
+
+                <div id="design_modal" class="modal">
+                    <div class="design-modal-content">
+                        <span class="design-close">&times;</span>
+                        <h3>Abstract</h3>
+                        <p>This design project was developed to address the client's need for a device to assist the blind in their 
+                            foundation in learning the braille and monitor their progress. There are three modes in the device that
+                             will help the users learn and know their progress - Braille Pattern Recognition, Voice Input Braille 
+                             Recognition, and Guess the Braille Pattern. The device will operate using ATmega328P as the microcontroller. 
+                             It will also be using six pushbuttons and six push/pull solenoids to mimic the braille pattern that was 
+                             formed by the user. The device can be controlled using a mobile application and it will be connected to 
+                             the device via Wi-Fi. The mobile application will be used by the facilitator.  The mobile application 
+                             supports voice recognition which will accept input from the user, and it can also be used to test the 
+                             knowledge of the user about the Braille. Using the three modes of the device, its functionalities and 
+                             accuracy were tested. Based on the tests conducted and analysis of the results, it can be concluded that 
+                             the device can accurately form the corresponding braille pattern from the input of the user.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </section>
+
+    <section id="contact">
+        <h1>Contact</h1>
+        errmilan@gmail.com | 09156808008 | Pasay City
+    </section>
+
+
+    <script>
+        // Get the modal
+        var modal1 = document.getElementById("thesis_modal");
+        var modal2 = document.getElementById("design_modal");
+        
+        // Get the button that opens the modal
+        var btn1 = document.getElementById("thesis_btn");
+        var btn2 = document.getElementById("design_btn");
+        
+        // Get the <span> element that closes the modal
+        var span1 = document.getElementsByClassName("thesis-close")[0];
+        var span2 = document.getElementsByClassName("design-close")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn1.onclick = function() {
+        modal1.style.display = "block";
+        }
+        btn2.onclick = function() {
+        modal2.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span1.onclick = function() {
+        modal1.style.display = "none";
+        }
+        span2.onclick = function() {
+        modal2.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal1) {
+            modal1.style.display = "none";
+        }
+
+        if (event.target == modal2) {
+            modal2.style.display = "none";
+        }
+    }
+    </script>
+</body>
+</html>
